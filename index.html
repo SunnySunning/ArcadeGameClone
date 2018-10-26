@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Effective JavaScript: Frogger</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="beginGame" onclick=beginGame()>here show the result</button>
+    </div>
+    <div class="selectBoys">
+        <button class="boy" onclick="">
+            <img src="images/char-boy.png">
+        </button>
+        <button class="boy" onclick="">
+            <img src="images/char-cat-girl.png">
+        </button>
+        <button class="boy" onclick="">
+            <img src="images/char-horn-girl.png">
+        </button>
+        <button class="boy" onclick="">
+            <img src="images/char-pink-girl.png">
+        </button>
+        <button class="boy" onclick="">
+            <img src="images/char-princess-girl.png">
+        </button>
+    </div>
+    <script src="js/resources.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/engine.js"></script>
+    <script>
+        function beginGame() {
+            window.hasBegin = false;
+        }
+        function showGameResult(isSuccess) {
+            let button = document.getElementsByTagName("button")[0];
+            button.onclick = "";
+            if(isSuccess){
+                button.innerText = "yeah,you win!"
+            } else {
+                button.innerText = "oh no,you lose..."
+            }
+        }
+
+        let maxIndex = 4;
+        let selectBoyIndex = -1;
+        let boyImages = ["images/char-boy.png","images/char-cat-girl.png","images/char-horn-girl.png","images/char-pink-girl.png","images/char-princess-girl.png"];
+        function handleInput(direction){
+            switch(direction){
+                case 'left':
+                    selectBoyIndex--;
+                    if(selectBoyIndex < 0){
+                        selectBoyIndex = 0;
+                    }
+                    break;
+                case 'right':
+                    selectBoyIndex++;
+                    if(selectBoyIndex > maxIndex){
+                        selectBoyIndex = maxIndex;
+                    }
+                    break;
+                case 'enter':
+                    let boyImage = boyImages[selectBoyIndex];
+                    player.child = boyImage;
+                    window.hasBegin = true;
+                    break;
+                default:
+                    break;
+            }
+
+            let boys = window.document.getElementsByClassName("boy");
+            for(let index = 0; index < boys.length; index++){
+                let boy = boys[index];
+                if(index === selectBoyIndex){
+                    boy.focus();
+                    break;
+                }
+            }
+
+
+        }
+    </script>
+</body>
+</html>

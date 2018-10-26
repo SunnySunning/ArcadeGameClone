@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+}
+#container {
+    position: relative;
+    height: 50px;
+}
+.selectBoys {
+    position: relative;
+    height: 171px;
+    margin-top: 10px;
+}
+.boy {
+    position: center;
+    width: 101px;
+    background-color: rgb(200,200,200);
+    padding: 0px;
+}
+.beginGame {
+    position: center;
+    width: 505px;
+    font-size: 50px;
+    color: #ffffff;
+    text-align: center;
+    background-color: darkgrey;
+}
+button:focus {
+    background-color: rgb(100,100,100);
+}
