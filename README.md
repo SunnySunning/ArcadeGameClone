@@ -5,7 +5,6 @@
 
 关于如何开始这个项目的更详细的指导，可以查阅这份[指南](https://gdgdocs.org/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true)。
 
-===============================
 <br>游戏攻略：
 <br>1：使用 左移（<-） 和 右移（->）进行人物选择，使用回车键（enter）开始游戏。
 <br>2：使用 左移 右移 上移 下移 键 控制人物的移动，人物到达对岸中碰撞到"害虫"，游戏失败，无碰撞游戏成功。
